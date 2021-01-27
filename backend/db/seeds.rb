@@ -12,3 +12,5 @@ Reservation.destroy_all
 testuser1 = User.create(username: "testuser", password: "test", email: "test@test.com", phone: 2102897584)
 testreview1 = Review.create(user_id: testuser1.id, text: "this is my review", rating: 5 )
 testreview2 = Review.create(user_id: testuser1.id, text: "this is my second review", rating: 4 )
+testreview3 = Review.create(user_id: testuser1.id, text: "this is my third review", rating: 5 )
+testreview4 = Review.create(user_id: testuser1.id, text: "this is my fourth review", rating: 2)

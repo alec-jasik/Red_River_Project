@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::API
     def current_user
-        byebug
+        # byebug
         begin
             method, token = request.headers[:Authorization].split(' ')
             # byebug

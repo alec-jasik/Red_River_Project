@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
     def index
         reviews = Review.all
-        render json: reviews
+        render json: reviews, :include => [:user]
     end
 
     def show
@@ -10,8 +10,9 @@ class ReviewsController < ApplicationController
     end
 
     def create
+        # byebug
         review = Review.create(review_params)
-        render json: {review: review}
+        render json: review, :include => [:user]
     end
 
     def destroy
@@ -22,6 +23,6 @@ class ReviewsController < ApplicationController
     private
 
     def review_params
-        params.require(:user_id).permit(:text, :rating )
+        params.require(:review).permit(:user_id, :text, :rating )
     end
 end
